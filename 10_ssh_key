@@ -1,0 +1,5 @@
+#!/bin/sh
+
+rm -f /etc/ssh/*_key*
+
+dpkg-reconfigure openssh-server
