@@ -5,15 +5,76 @@ ceph:
   osd-devices: '/dev/vdb'
   osd-reformat: 'yes'
   source: 'cloud:precise-updates/havana'
+
 ceph-osd:
   osd-devices: '/dev/vdb'
   osd-reformat: 'yes'
   source: 'cloud:precise-updates/havana'
 
+ceph-radosgw:
+  source: 'cloud:precise-updates/havana'
+  
+
 mysql:
+  dataset-size: 50%
+  ha-bindiface: br0
   vip: '10.10.20.11'
-  vip_cidr: 16
+  vip_cidr: '16'
+  vip_iface: 'br0'
 
 rabbitmq-server:
+  ha-bindiface: br0
   vip: '10.10.20.8'
+  vip_cidr: '16'
+  vip_iface: 'br0'
+
+keystone:
+  openstack-origin: 'cloud:precise-havana'
+  admin-user: 'admin'
+  admin-password: 'openstack'
+  admin-token: 'ubuntutesting'
+  ha-bindiface: br0
+  vip: '10.10.20.1'
   vip_cidr: 16
+  vip_iface: 'br0'
+
+nova-cloud-controller:
+  openstack-origin: 'cloud:precise-havana'
+  network-manager: 'Neutron' # Quantum == Neutron for Havana onwards
+
+  ha-bindiface: br0
+  vip: '10.10.20.2'
+  vip_cidr: 16
+  vip_iface: 'br0'
+
+nova-compute:
+  openstack-origin: 'cloud:precise-havana'
+  enable-live-migration: 'True'
+  migration-auth-type: 'ssh'
+
+quantum-gateway:
+  openstack-origin: 'cloud:precise-havana'
+  ext-port: 'eth1'
+
+glance:
+  openstack-origin: 'cloud:precise-havana'
+  ha-bindiface: br0
+  vip: '10.10.20.4'
+  vip_cidr: 16
+  vip_iface: 'br0'
+
+cinder:
+  glance-api-version: 2
+  openstack-origin: 'cloud:precise-havana'
+  block-device: 'None'
+  ha-bindiface: br0
+  vip: '10.10.20.3'
+  vip_cidr: 16
+  vip_iface: 'br0'
+
+openstack-dashboard:
+  openstack-origin: 'cloud:precise-havana'
+  ha-bindiface: br0
+  vip: '10.10.20.5'
+  vip_cidr: 16
+  vip_iface: 'br0'

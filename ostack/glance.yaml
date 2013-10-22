@@ -1,4 +1,0 @@
-glance:
-  openstack-origin: 'cloud:precise-havana'
-  vip: '192.168.77.4'
-  vip_cidr: 19

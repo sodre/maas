@@ -1,3 +1,0 @@
-rabbitmq-server:
-  vip: '192.168.77.11'
-  vip_cidr: 19
