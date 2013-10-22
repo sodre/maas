@@ -1,0 +1,19 @@
+ceph:
+  fsid:  'b5d6016c-71e1-4b05-885d-5e931237c9cf'
+  monitor-count: 1
+  monitor-secret: 'AQDveWNSMACdMhAA4DHNReh43E97++1I99pnFA==' 
+  osd-devices: '/dev/vdb'
+  osd-reformat: 'yes'
+  source: 'cloud:precise-updates/havana'
+ceph-osd:
+  osd-devices: '/dev/vdb'
+  osd-reformat: 'yes'
+  source: 'cloud:precise-updates/havana'
+
+mysql:
+  vip: '10.10.20.11'
+  vip_cidr: 16
+
+rabbitmq-server:
+  vip: '10.10.20.8'
+  vip_cidr: 16
