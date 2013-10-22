@@ -1,0 +1,8 @@
+keystone:
+  openstack-origin: 'cloud:precise-havana'
+  admin-user: 'draco'
+  admin-password: 'draco'
+  admin-token: 'super_token!'
+  vip: '192.168.77.1'
+  vip_cidr: 19
+

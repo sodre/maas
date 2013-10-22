@@ -1,0 +1,5 @@
+cinder:
+  openstack-origin: 'cloud:precise-havana'
+  block-device: 'None'
+  vip: '192.168.77.3'
+  vip_cidr: 19
