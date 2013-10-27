@@ -1,0 +1,25 @@
+<volume>
+  <name>m1basic-00</name>
+  <key>4d9obD-x1yz-c4r1-lHcF-GNFx-mGNj-uZonl7</key>
+  <source>
+    <device path='/dev/sda3'>
+      <extent start='286005395456' end='294595330048'/>
+    </device>
+  </source>
+  <capacity unit='bytes'>8589934592</capacity>
+  <allocation unit='bytes'>8589934592</allocation>
+  <target>
+    <path>/dev/kvm01-vg/m1basic-00</path>
+    <permissions>
+      <mode>0660</mode>
+      <owner>0</owner>
+      <group>6</group>
+    </permissions>
+    <timestamps>
+      <atime>1382731336.430803897</atime>
+      <mtime>1382731336.430803897</mtime>
+      <ctime>1382731336.430803897</ctime>
+    </timestamps>
+  </target>
+</volume>
+
