@@ -3,17 +3,17 @@ ceph:
   monitor-count: 3
   monitor-secret: 'AQDveWNSMACdMhAA4DHNReh43E97++1I99pnFA==' 
   osd-devices: '/dev/vdb'
-  osd-reformat: 'yes'
+  osd-reformat: 'no'
   source: 'cloud:precise-updates/havana'
 
 ceph-osd:
   osd-devices: '/dev/vdb'
-  osd-reformat: 'yes'
+  osd-reformat: 'no'
   source: 'cloud:precise-updates/havana'
 
 ceph-radosgw:
   source: 'cloud:precise-updates/havana'
-  
+
 mysql:
   dataset-size: 50%
 
@@ -30,9 +30,11 @@ rabbitmq-server:
 
 keystone:
   openstack-origin: 'cloud:precise-havana'
-  admin-user: 'admin'
-  admin-password: 'openstack'
-  admin-token: 'ubuntutesting'
+  admin-user: 'draco'
+  admin-password: 'draco'
+  admin-token: 'ac43c0a6-2e70-45ba-a83f-5c132ef9c1f3'
+  https-service-endpoints: 'True'
+  region: rockville
 
   ha-bindiface: br0
   #vip: '10.10.20.1'
@@ -42,6 +44,7 @@ keystone:
 nova-cloud-controller:
   openstack-origin: 'cloud:precise-havana'
   network-manager: 'Quantum' # Quantum == Neutron for Havana onwards
+  quantum-security-groups: 'Yes'
 
   ha-bindiface: br0
   #vip: '10.10.20.2'
@@ -82,5 +85,6 @@ nova-compute:
   openstack-origin: 'cloud:precise-havana'
   enable-live-migration: 'True'
   migration-auth-type: 'ssh'
+  multi-host: 'False'
 
 
