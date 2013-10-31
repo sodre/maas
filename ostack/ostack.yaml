@@ -3,12 +3,12 @@ ceph:
   monitor-count: 3
   monitor-secret: 'AQDveWNSMACdMhAA4DHNReh43E97++1I99pnFA==' 
   osd-devices: '/dev/vdb'
-  osd-reformat: 'no'
+  osd-reformat: 'yes'
   source: 'cloud:precise-updates/havana'
 
 ceph-osd:
   osd-devices: '/dev/vdb'
-  osd-reformat: 'no'
+  osd-reformat: 'yes'
   source: 'cloud:precise-updates/havana'
 
 ceph-radosgw:
@@ -32,9 +32,9 @@ keystone:
   openstack-origin: 'cloud:precise-havana'
   admin-user: 'draco'
   admin-password: 'draco'
-  admin-token: 'ac43c0a6-2e70-45ba-a83f-5c132ef9c1f3'
-  https-service-endpoints: 'True'
-  region: rockville
+  #admin-token: 'ac43c0a6-2e70-45ba-a83f-5c132ef9c1f3'
+  # Do not use this yet. It is not working!
+  #https-service-endpoints: 'True'
 
   ha-bindiface: br0
   #vip: '10.10.20.1'
@@ -45,6 +45,7 @@ nova-cloud-controller:
   openstack-origin: 'cloud:precise-havana'
   network-manager: 'Quantum' # Quantum == Neutron for Havana onwards
   quantum-security-groups: 'Yes'
+  neutron-external-network: 'ext_net'
 
   ha-bindiface: br0
   #vip: '10.10.20.2'

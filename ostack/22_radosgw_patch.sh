@@ -20,6 +20,7 @@ juju ssh keystone/0 sudo openssl x509 -in /etc/keystone/ssl/certs/signing_cert.p
   juju ssh ceph-radosgw/0 sudo certutil -A -d /var/lib/ceph/nss -n signing_cert -t "P,P,P"
 
 juju ssh ceph-radosgw/0 << 'EOF'
+  sudo sed -i -e 's/\#nss/ nss/' /etc/ceph/ceph.conf 
 	sudo mkdir /var/lib/ceph/radosgw/ceph-radosgw.gateway
 	sudo touch /var/lib/ceph/radosgw/ceph-radosgw.gateway/done
   sudo service radosgw-all-starter restart
